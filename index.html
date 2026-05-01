@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MG Supply Chain Consulting helps companies improve logistics, transportation, distribution, last-mile delivery, import/export compliance, talent sourcing, and supply chain performance across the U.S., Caribbean, and LATAM." />
+  <meta name="description" content="MG Supply Chain Consulting: Executive-level supply chain architecture, operational turnaround, and logistics engineering for the U.S., Caribbean, and LATAM." />
   <title>MG Supply Chain Consulting | Manuel Gonzalez</title>
-
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+  
   <style>
     * {
       box-sizing: border-box;
@@ -16,647 +18,532 @@
     }
 
     :root {
-      --bg: #020617;
-      --panel: #0f172a;
-      --panel-soft: rgba(255, 255, 255, 0.035);
-      --line: rgba(255, 255, 255, 0.08);
+      --bg: #09090b;
+      --panel: #18181b;
+      --panel-soft: rgba(255, 255, 255, 0.03);
+      --panel-hover: rgba(255, 255, 255, 0.05);
+      --line: rgba(255, 255, 255, 0.1);
       --text: #f8fafc;
-      --muted: #94a3b8;
-      --body: #cbd5e1;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --blue: #2563eb;
+      --muted: #a1a1aa;
+      --body: #d4d4d8;
+      --accent: #ffffff; 
     }
 
     body {
       margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
     }
 
     a {
       color: inherit;
       text-decoration: none;
-      transition: 0.25s ease;
+      transition: 0.3s ease;
     }
 
     p {
       color: var(--body);
       font-size: 1.05rem;
+      font-weight: 300;
     }
 
+    /* Navigation */
     .nav {
       position: sticky;
       top: 0;
       z-index: 99;
-      background: rgba(2, 6, 23, 0.88);
-      backdrop-filter: blur(14px);
+      background: rgba(9, 9, 11, 0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
-      padding: 16px 8%;
+      padding: 20px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .nav strong {
+    .brand-text {
       color: var(--accent);
-      font-size: 1.05rem;
-      letter-spacing: 0.4px;
+      font-size: 1.25rem;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
     }
 
     .nav-links a {
-      margin-left: 24px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       color: var(--muted);
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
     }
 
     .nav-links a:hover {
       color: var(--accent);
     }
 
+    /* Hero Section */
     .hero {
-      min-height: 92vh;
-      padding: 110px 8% 90px;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 42%),
-        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.18), transparent 42%),
-        linear-gradient(135deg, #020617, #0b1120);
+      min-height: 90vh;
+      padding: 120px 5% 80px;
       display: flex;
       align-items: center;
+      background: radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.04), transparent 50%), var(--bg);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
     }
 
-    .hero-grid {
-      max-width: 1220px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1586528116311-ad8c73875052?q=80&w=2070&auto=format&fit=crop') center/cover;
+      opacity: 0.08;
+      mix-blend-mode: luminosity;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1400px;
       width: 100%;
       margin: auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 64px;
-      align-items: center;
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
       display: inline-block;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid var(--line);
+      padding: 6px 16px;
+      border-radius: 100px;
     }
 
     h1 {
-      font-size: clamp(2.75rem, 5.5vw, 4.95rem);
+      font-size: clamp(3rem, 6vw, 5.5rem);
       line-height: 1.05;
-      margin: 0 0 1.4rem;
-      letter-spacing: -2px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      margin: 0 0 1rem;
+      margin: 0 0 1.5rem;
       letter-spacing: -1px;
-    }
-
-    h3 {
-      margin-top: 0;
+      max-width: 1100px;
       color: var(--text);
     }
 
     .hero p {
-      font-size: 1.23rem;
-      max-width: 700px;
-      margin-bottom: 1.4rem;
-    }
-
-    .geo-line {
-      color: var(--accent);
-      font-weight: 700;
-      margin-top: -0.5rem;
+      font-size: 1.25rem;
+      max-width: 750px;
+      margin-bottom: 2rem;
+      color: var(--muted);
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 16px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 15px 25px;
-      border-radius: 14px;
-      font-weight: 800;
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 12px;
+      padding: 16px 32px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
       cursor: pointer;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #020617;
-      box-shadow: 0 16px 35px rgba(56, 189, 248, 0.16);
+      color: var(--bg);
     }
 
     .btn-primary:hover {
-      background: #7dd3fc;
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.24);
+      background: #e4e4e7;
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
-      border: 1px solid rgba(56, 189, 248, 0.36);
+      border: 1px solid var(--line);
       color: var(--accent);
-      background: rgba(56, 189, 248, 0.035);
+      background: transparent;
     }
 
     .btn-secondary:hover {
       border-color: var(--accent);
-      background: rgba(56, 189, 248, 0.09);
-      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    .profile-card {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      padding: 40px;
-      box-shadow: 0 28px 65px -18px rgba(0, 0, 0, 0.6);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 180px;
-      height: 180px;
-      background: rgba(56, 189, 248, 0.16);
-      filter: blur(36px);
-      border-radius: 50%;
-    }
-
-    .profile-card h3,
-    .profile-card p,
-    .metric-grid {
-      position: relative;
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      margin-top: 30px;
-    }
-
-    .metric {
-      background: rgba(15, 23, 42, 0.72);
-      padding: 22px;
-      border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      text-align: center;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 2rem;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .metric span {
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-    }
-
+    /* General Sections */
     section {
-      padding: 96px 8%;
+      padding: 120px 5%;
+      border-top: 1px solid var(--line);
     }
 
     .container {
-      max-width: 1220px;
+      max-width: 1400px;
       margin: auto;
     }
 
     .section-header {
-      margin-bottom: 52px;
-      max-width: 760px;
+      margin-bottom: 60px;
+      max-width: 800px;
     }
 
-    .section-header.center {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+    h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+      letter-spacing: -0.5px;
     }
 
-    .cards {
+    /* Bento Box Grid System */
+    .bento {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
     }
 
-    .card {
+    .bento-item {
       background: var(--panel-soft);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 34px;
-      border-radius: 26px;
-      transition: 0.35s ease;
-      min-height: 225px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.4s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .card:hover {
-      background: rgba(255, 255, 255, 0.055);
-      transform: translateY(-8px);
-      border-color: rgba(56, 189, 248, 0.32);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
+    .bento-item:hover {
+      background: var(--panel-hover);
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
-    .card i {
-      font-size: 2.25rem;
-      color: var(--accent);
-      margin-bottom: 1.35rem;
-      display: block;
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .card p {
+    .bento-item i {
+      font-size: 2rem;
       color: var(--muted);
-      font-size: 0.98rem;
+      margin-bottom: 24px;
+    }
+
+    .bento-item h3 {
+      font-size: 1.75rem;
+      margin: 0 0 16px;
+      color: var(--text);
+    }
+
+    .bento-item p {
       margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      flex-grow: 1;
     }
 
-    .dark-bg {
-      background: #0b1120;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .case {
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 26px;
-      padding: 34px;
-    }
-
-    .case h3 {
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-
-    .case ul {
-      color: var(--body);
+    .bento-item ul {
       margin: 20px 0 0;
-      padding-left: 22px;
+      padding-left: 20px;
+      color: var(--body);
+      font-size: 0.95rem;
     }
 
-    .case li {
+    .bento-item li {
       margin-bottom: 8px;
     }
 
-    .pills {
+    /* Image Wrappers and Shaping */
+    .bento-img-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: var(--bg);
+    }
+
+    .bento-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.65) contrast(1.1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bento-item:hover .bento-img {
+      filter: grayscale(30%) brightness(0.9) contrast(1.05);
+      transform: scale(1.04);
+    }
+
+    .img-landscape { height: 220px; }
+    .img-portrait { height: 260px; }
+
+    /* Grid Spans */
+    .col-3 { grid-column: span 3; }
+    .col-4 { grid-column: span 4; }
+    .col-6 { grid-column: span 6; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    /* Highlight Metric styling inside Bento */
+    .bento-metric {
       display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 28px;
+      align-items: baseline;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 24px;
+    }
+    .bento-metric span.number {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .bento-metric span.label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: var(--muted);
     }
 
-    .pill {
-      background: var(--accent-soft);
-      border: 1px solid rgba(56, 189, 248, 0.32);
-      color: #e0f2fe;
-      padding: 11px 16px;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 800;
-    }
-
-    .cta {
-      text-align: center;
-      background:
-        radial-gradient(circle at center, rgba(56, 189, 248, 0.22), transparent 45%),
-        linear-gradient(135deg, #1e3a8a, #020617);
-    }
-
-    .cta .container {
-      max-width: 900px;
-    }
-
+    /* Contact Box */
     .contact-box {
       max-width: 900px;
-      margin: auto;
+      margin: 0 auto;
       text-align: center;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 42px;
-      border-radius: 30px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      padding: 60px 40px;
+      border-radius: 12px;
     }
 
-    .contact-box a {
+    .contact-box a.link-text {
       color: var(--accent);
-      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+    }
+    
+    .contact-box a.link-text:hover {
+      border-bottom-color: var(--accent);
     }
 
     footer {
-      padding: 42px 8%;
+      padding: 40px 5%;
       text-align: center;
-      color: #64748b;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.92rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        padding-top: 80px;
-      }
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .col-4 { grid-column: span 6; }
+      .col-8 { grid-column: span 12; }
+    }
 
-      .hero-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      .hero {
+        padding-top: 60px;
         text-align: center;
       }
-
-      .hero p {
+      h1, .hero p {
         margin-left: auto;
         margin-right: auto;
       }
-
       .buttons {
         justify-content: center;
       }
-
-      .nav {
-        display: block;
-      }
-
-      .nav-links {
-        margin-top: 10px;
-      }
-
-      .nav-links a {
-        margin: 0 14px 0 0;
-        display: inline-block;
-        padding: 4px 0;
-      }
-
-      .metric-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 74px 7%;
+      .col-3, .col-4, .col-6, .col-8 { grid-column: span 12; }
+      .bento-item {
+        padding: 30px;
       }
     }
   </style>
 </head>
-
 <body>
+
   <nav class="nav">
-    <strong>MG Supply Chain Consulting</strong>
+    <div class="brand-text">MG Supply Chain Consulting</div>
     <div class="nav-links">
-      <a href="#problems">Problems</a>
-      <a href="#services">Solutions</a>
-      <a href="#impact">Impact</a>
-      <a href="#coverage">Coverage</a>
-      <a href="#scheduler">Schedule</a>
-      <a href="#contact">Contact</a>
+      <a href="#methodology">Frameworks</a>
+      <a href="#capabilities">Services</a>
+      <a href="#record">The Record</a>
+      <a href="#contact">Schedule</a>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Supply Chain | Logistics | Operations</span>
-        <h1>Architecting resilient supply chains for companies that need execution, visibility, and control.</h1>
-        <p>
-          I help organizations reduce freight spend, improve service performance, and bring structure to complex logistics operations across transportation, warehousing, last-mile, and global trade.
-        </p>
-        <p class="geo-line">Orlando-Based | Serving the U.S., Caribbean & LATAM</p>
-        <div class="buttons">
-          <a href="#scheduler" class="btn btn-primary">
-            <i class="fas fa-calendar-check"></i> Schedule Intro Call
-          </a>
-          <a href="#assessment" class="btn btn-secondary">
-            <i class="fas fa-chart-line"></i> Free Assessment
-          </a>
-        </div>
-      </div>
-
-      <div class="profile-card">
-        <h3>The Record</h3>
-        <p>24+ years of front-line and executive leadership across global multimodal networks, regulated operations, and enterprise distribution environments.</p>
-        <div class="metric-grid">
-          <div class="metric"><strong>24+</strong><span>Years</span></div>
-          <div class="metric"><strong>98%+</strong><span>Service</span></div>
-          <div class="metric"><strong>$100M+</strong><span>Flow</span></div>
-          <div class="metric"><strong>100%</strong><span>IRA</span></div>
-          <div class="metric"><strong>Talent</strong><span>Sourcing</span></div>
-        </div>
+    <div class="hero-container">
+      <span class="eyebrow">Global Supply Chain | Lean Six Sigma Leadership</span>
+      <h1>Executive Supply Chain Architecture & Operational Turnaround.</h1>
+      <p>
+        Leveraging 24+ years of executive leadership across Fortune 500 logistics to deliver tangible operational and financial results. Specializing in highly regulated global supply chains, multi-site distribution, and enterprise digital transformation.
+      </p>
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+        <a href="#capabilities" class="btn btn-secondary">View Consulting Services</a>
       </div>
     </div>
   </header>
 
-  <section id="problems" class="dark-bg">
+  <section id="methodology">
     <div class="container">
       <div class="section-header">
-        <h2>Where companies lose money</h2>
-        <p>Most supply chains are not completely broken. They are under-structured, under-measured, and carrying hidden cost through weak execution controls.</p>
+        <h2>Strategic Frameworks</h2>
+        <p>Applying enterprise-level methodologies to drive continuous improvement, cost reduction, and strict regulatory compliance across complex supply chains.</p>
       </div>
-
-      <div class="cards">
-        <div class="card">
-          <i class="fas fa-dollar-sign"></i>
-          <h3>Rising freight cost</h3>
-          <p>Carrier decisions, drayage delays, routing gaps, and limited cost governance create avoidable expense.</p>
+      
+      <div class="bento">
+        <div class="bento-item col-8">
+          <div class="bento-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075&auto=format&fit=crop" alt="Dedicated Procurement Logistics" class="bento-img img-landscape" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <i class="fas fa-chart-line"></i>
+          <h3>Methodologies & Execution</h3>
+          <p>Driving operational excellence through proven frameworks and data-driven governance:</p>
+          <ul>
+            <li><strong>Lean Six Sigma (Black Belt):</strong> Labor optimization, cost reduction, process standardization, and continuous improvement initiatives.</li>
+            <li><strong>Project Management (PMP):</strong> Large-scale system deployments (WMS/TMS), multi-site operational transformations, and cross-functional leadership.</li>
+            <li><strong>APICS Frameworks:</strong> S&OP, inventory optimization, demand planning, and distribution network design (CSCP / CPIM concepts).</li>
+          </ul>
         </div>
-        <div class="card">
-          <i class="fas fa-boxes-stacked"></i>
-          <h3>Warehouse inefficiency</h3>
-          <p>Labor misalignment, poor dock flow, weak inventory controls, and unclear ownership reduce throughput.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-eye-slash"></i>
-          <h3>Limited visibility</h3>
-          <p>Without KPI governance, leaders react late to failures across transportation, inventory, service, and cost.</p>
+        <div class="bento-item col-4">
+          <i class="fas fa-industry"></i>
+          <h3>Industries & Environments</h3>
+          <p>Extensive experience managing highly regulated flows and complex enterprise environments:</p>
+          <ul>
+            <li>Pharmaceuticals & Healthcare (FDA, GMP)</li>
+            <li>Technology & Medical Equipment</li>
+            <li>Retail & Consumer Brands</li>
+            <li>Industrial Manufacturing & Automotive</li>
+            <li>Foodservice (Refrigerated / Perishables)</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <section id="capabilities">
     <div class="container">
       <div class="section-header">
-        <h2>What I fix</h2>
-        <p>Hands-on operational strategies to improve cost, service, compliance, and execution across the end-to-end supply chain.</p>
+        <h2>Consulting & Project Management</h2>
+        <p>Targeted expertise designed to optimize end-to-end commercial supply distribution, transportation, and infrastructure.</p>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <i class="fas fa-truck-fast"></i>
-          <h3>Freight strategy</h3>
-          <p>Carrier governance, modal analysis, drayage control, dedicated transport, routing alignment, and freight optimization.</p>
+      <div class="bento">
+        <!-- Pillar I -->
+        <div class="bento-item col-6">
+          <div class="bento-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop" alt="Cargo Ship at Port" class="bento-img img-landscape" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <i class="fas fa-globe"></i>
+          <h3>Transportation & Global Freight</h3>
+          <p>Optimization of international multimodal networks (Ocean, Drayage, Ground). Expertise in cross-border customs clearance, ISF 10+2, Puerto Rico SURI system tax duties, D&D cost management, and rigorous Carrier/3PL governance.</p>
         </div>
-        <div class="card">
+        
+        <!-- Pillar II -->
+        <div class="bento-item col-6">
+          <div class="bento-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1935&auto=format&fit=crop" alt="High-Volume Distribution Warehouse" class="bento-img img-landscape" loading="lazy" onerror="this.style.display='none'">
+          </div>
           <i class="fas fa-warehouse"></i>
-          <h3>Distribution operations</h3>
-          <p>RDC execution, labor planning, dock flow, inventory accuracy, cycle count governance, and reverse logistics.</p>
+          <h3>Warehousing & Distribution Excellence</h3>
+          <p>Full-spectrum warehouse management including facility layout engineering, capacity planning, and Lean 5S workflow design. Specializing in achieving 100% Inventory Record Accuracy (IRA) in highly-regulated (GMP, Hazmat) environments.</p>
         </div>
-        <div class="card">
-          <i class="fas fa-globe-americas"></i>
-          <h3>Global trade</h3>
-          <p>Import/export operations, customs coordination, documentation control, ISF 10+2, D&D exposure, and port activity.</p>
+
+        <!-- Pillar III -->
+        <div class="bento-item col-4">
+          <i class="fas fa-truck-ramp-box"></i>
+          <h3>Last-Mile & Specialized Logistics</h3>
+          <p>Design of customized final mile services, including white-glove delivery, technical product testing, and site checks. Project logistics management for industrial heavy lift and oversized equipment rigging.</p>
         </div>
-        <div class="card">
+
+        <!-- Pillar IV -->
+        <div class="bento-item col-4">
           <i class="fas fa-route"></i>
-          <h3>Last-mile execution</h3>
-          <p>White-glove delivery, technical installation readiness, route assessment, staging control, and contractor governance.</p>
+          <h3>Dedicated Transport Solutions</h3>
+          <p>Comprehensive carrier sourcing, onboarding, and contract SLA management. Specialized safety consulting and DOT compliance for fleet telematics systems including Lytx, GeoTab, and PeopleNet HOS logging devices.</p>
         </div>
-        <div class="card">
-          <i class="fas fa-handshake"></i>
-          <h3>3PL & carrier governance</h3>
-          <p>Vendor qualification, SLA alignment, scorecards, contract accountability, corrective action, and performance reviews.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-chart-pie"></i>
-          <h3>Digital visibility</h3>
-          <p>WMS/TMS process alignment, dashboard design, KPI governance, Power BI reporting, and control tower concepts.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-user-tie"></i>
-          <h3>Talent management</h3>
-          <p>Supply chain, logistics, transportation, warehouse, operations, and leadership talent sourcing support for companies that need experienced operational talent.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-people-arrows"></i>
-          <h3>Service provider sourcing</h3>
-          <p>Support identifying, screening, and aligning qualified 3PLs, carriers, contractors, and specialized service providers for operational needs.</p>
+
+        <!-- Pillar V -->
+        <div class="bento-item col-4">
+          <i class="fas fa-microchip"></i>
+          <h3>Strategic Digital Transformation</h3>
+          <p>Leading large-scale WMS, TMS, and ERP deployments. Enabling predictive decision-making through automated data strategies and Power BI dashboards, while managing FDA 483 remediation and regulatory readiness.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="impact" class="dark-bg">
+  <section id="record">
     <div class="container">
       <div class="section-header">
-        <h2>Operational impact</h2>
-        <p>Experience built across Fortune 500 logistics environments, regulated operations, international freight, multi-site distribution, and high-performance KPI governance.</p>
+        <h2>The Record of Execution</h2>
+        <p>24+ years of leadership driving continuous improvement across Fortune 500 logistics environments including Ryder System, Electrolux, CVS, Sysco, and Praxair.</p>
       </div>
 
-      <div class="case-grid">
-        <div class="case">
-          <h3>Distribution performance improvement</h3>
-          <p>Strengthened warehouse execution, inventory discipline, outbound performance, and cost control in high-volume distribution environments.</p>
-          <ul>
-            <li>Maintained 100% inventory record accuracy governance.</li>
-            <li>Supported service performance exceeding 98%.</li>
-            <li>Managed continuous inventory flow exceeding $100M annually.</li>
-          </ul>
-        </div>
-
-        <div class="case">
-          <h3>Global freight & port operations</h3>
-          <p>Improved international freight execution through stronger carrier coordination, broker alignment, documentation control, and D&D management.</p>
-          <ul>
-            <li>Managed ocean, drayage, ground, and dedicated transport flows.</li>
-            <li>Supported Puerto Rico, Caribbean, LATAM, and U.S. mainland logistics.</li>
-            <li>Improved demurrage and equipment cost visibility.</li>
-          </ul>
-        </div>
-
-        <div class="case">
-          <h3>Operational turnaround & cost reduction</h3>
-          <p>Delivered process improvement and vendor alignment across regulated industrial, healthcare, retail, technology, and foodservice operations.</p>
-          <ul>
-            <li>Delivered $400K+ annual savings in prior logistics leadership role.</li>
-            <li>Reduced operating costs by 15% during a first-year improvement program.</li>
-            <li>Built KPI-driven governance across suppliers, carriers, and operations teams.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="coverage">
-    <div class="container">
-      <div class="section-header">
-        <h2>Industries and regions supported</h2>
-        <p>Based in Orlando, Florida, with experience supporting physical product supply chains, regulated flows, multi-site networks, and international trade corridors.</p>
-      </div>
-
-      <div class="pills">
-        <span class="pill">United States</span>
-        <span class="pill">Puerto Rico</span>
-        <span class="pill">Caribbean</span>
-        <span class="pill">LATAM</span>
-        <span class="pill">Retail</span>
-        <span class="pill">Technology</span>
-        <span class="pill">Healthcare</span>
-        <span class="pill">Pharmaceuticals</span>
-        <span class="pill">Foodservice</span>
-        <span class="pill">Industrial Manufacturing</span>
-        <span class="pill">Automotive</span>
-        <span class="pill">3PL Providers</span>
-        <span class="pill">E-commerce</span>
-        <span class="pill">Talent Sourcing</span>
-        <span class="pill">Contractor Placement</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="assessment" class="cta">
-    <div class="container">
-      <h2>Free logistics & operations readiness assessment</h2>
-      <p>
-        In a 30-minute working session, I help identify hidden costs, operational bottlenecks, compliance exposure, and performance gaps across your supply chain.
-      </p>
-      <div class="buttons" style="justify-content: center;">
-        <a href="mailto:mgsupplychainconsulting@gmail.com?subject=Free Logistics Assessment Request" class="btn btn-primary">
-          <i class="fas fa-paper-plane"></i> Request Free Assessment
-        </a>
-        <a href="#scheduler" class="btn btn-secondary">
-          <i class="fas fa-calendar-days"></i> Schedule Intro Call
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="scheduler" class="dark-bg">
-    <div class="container">
-      <div class="section-header center">
-        <h2>Schedule an introductory Google Meet</h2>
-        <p>Use the scheduling link below to request an introductory call for consulting, contracting support, talent sourcing, or service provider proposals. Communication is handled by email to keep follow-up structured and documented.</p>
-      </div>
-      <div class="contact-box">
-        <p><strong>Introductory calls:</strong> Logistics consulting, operational assessments, contracting support, and strategic project review.</p>
-        <p><strong>Service provider proposals:</strong> 3PLs, carriers, contractors, technology providers, and specialized logistics service partners may request a proposal review through the same scheduling process.</p>
-        <p style="color: var(--muted); font-size: 0.95rem;">Replace the placeholder link below with your Google Calendar appointment schedule link once created.</p>
-        <div class="buttons" style="justify-content: center;">
-          <a href="https://calendar.google.com/" target="_blank" rel="noopener" class="btn btn-primary">
-            <i class="fas fa-video"></i> Schedule via Google Meet
-          </a>
-          <a href="mailto:mgsupplychainconsulting@gmail.com?subject=Scheduling Request" class="btn btn-secondary">
-            <i class="fas fa-envelope"></i> Request Scheduling by Email
-          </a>
+      <div class="bento">
+        <div class="bento-item col-12">
+          <h3>Performance Metrics</h3>
+          <p>A history of maintaining uncompromising accuracy and service levels across high-volume distribution networks and heavily regulated pharmaceutical and industrial flows.</p>
+          <div class="bento" style="margin-top: 24px;">
+            <div class="col-3">
+              <div class="bento-metric" style="padding-top:0;">
+                <span class="number">>98%</span>
+                <span class="label">Consistent Service Level</span>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="bento-metric" style="padding-top:0;">
+                <span class="number">100%</span>
+                <span class="label">Inventory Record Accuracy</span>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="bento-metric" style="padding-top:0;">
+                <span class="number"><$2K</span>
+                <span class="label">Variance on $100M+ Flow</span>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="bento-metric" style="padding-top:0;">
+                <span class="number">24+</span>
+                <span class="label">Years Leadership</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -665,17 +552,30 @@
   <section id="contact">
     <div class="container">
       <div class="contact-box">
-        <h2>Start the conversation</h2>
-        <p>Available for consulting engagements, contracting support, operational assessments, project leadership, fractional logistics leadership, talent sourcing, and service provider alignment.</p>
-        <p><strong>Email:</strong> <a href="mailto:mgsupplychainconsulting@gmail.com">mgsupplychainconsulting@gmail.com</a></p>
-        <p><strong>Calendar:</strong> <a href="#scheduler">Schedule an introductory Google Meet</a></p>
-        <p><strong>Location:</strong> Orlando, Florida | Serving U.S., Caribbean & LATAM | Available Remote / On-Site / Travel-Based</p>
+        <h2>Initiate an Engagement</h2>
+        <p style="max-width: 600px; margin: 0 auto 30px;">
+          Available for strategic consulting engagements, infrastructure planning, operational readiness assessments, and dedicated procurement modeling. 
+        </p>
+        
+        <div class="buttons" style="justify-content: center; margin-bottom: 30px;">
+          <a href="https://calendar.google.com/" target="_blank" rel="noopener" class="btn btn-primary">
+            Schedule an Intro Meeting
+          </a>
+        </div>
+        
+        <p>
+          Direct Inquiries: <a href="mailto:mgsupplychainconsulting@gmail.com" class="link-text">mgsupplychainconsulting@gmail.com</a>
+        </p>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 20px;">
+          Orlando, FL Based | Supporting U.S. Mainland, Puerto Rico, Caribbean & LATAM
+        </p>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2026 MG Supply Chain Consulting | Manuel Gonzalez | U.S. • Caribbean • LATAM
+    © 2026 MG Supply Chain Consulting | Manuel Gonzalez
   </footer>
+
 </body>
 </html>
